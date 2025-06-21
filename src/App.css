@@ -1,0 +1,104 @@
+/* Ajuste global para centrar contenido */
+
+body {
+ background-image: url('/images/image1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+    position: relative;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.5); /* Ajusta el 0.5 para más o menos oscuridad */
+  z-index: 0;
+  pointer-events: none;
+}
+.navbar-logo {
+  font-size: 3.5rem; /* Ajusta el tamaño */
+  text-align: center; /* Centra el texto */
+  font-weight: bold;
+  color: #fae737; /* Color cálido */
+  text-transform: uppercase;
+}
+
+/* Navbar centrado */
+.navbar {
+  display: flex;
+  justify-content: center; /* Centra los elementos */
+  align-items: center;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  background: rgba(231, 12, 12, 0.6);
+  width: 90%; /* Asegura que ocupe el ancho necesario */
+  margin: auto; /* Centra el navbar */
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+
+.navbar-links a {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: rgb(237, 241, 20);
+}
+
+/* Ofertas centradas */
+.offer-section {
+  background: rgba(255, 255, 255, 0.25); /* Más opaco = más blanco, menos opaco = más transparente */
+  backdrop-filter: blur(12px);            /* Aumenta el blur para más esmerilado */
+  -webkit-backdrop-filter: blur(12px);    /* Soporte para Safari */
+  border-radius: 16px;
+  box-shadow: 0 4px 32px 0 rgba(0,0,0,0.25);
+  padding: 2rem;
+  margin: 2rem 0;
+  color: #222;                            /* Asegura buen contraste */
+}
+
+.offer-section h2 {
+  font-size: 3.5rem;
+  color: #dbcfcc;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.offer-section p {
+  font-size: 1.8rem;
+  color: #d6d0ce;
+  line-height: 2;
+}
+
+/* Footer centrado */
+footer {
+  background-color: #d94f2f;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 1.3rem;
+  width: 100%;
+}
+li{
+  color:#f3eeec;
+  justify-content: center;
+}
+ul {
+  list-style: none; /* Quita las viñetas */
+}
+h1 {
+  color: #fff;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-top: 2rem;
+  z-index: 2;
+  position: relative;
+}

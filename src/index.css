@@ -1,0 +1,79 @@
+/* ...código existente... */
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* Responsive para tablets */
+@media (max-width: 900px) {
+  .navbar-links {
+    gap: 1em;
+    font-size: 1em;
+  }
+  h1 {
+    font-size: 2.2em;
+  }
+  .offer-section {
+    padding: 1em;
+  }
+}
+
+/* Responsive para teléfonos */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1em 0.5em;
+  }
+  .navbar-logo {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+  }
+  .navbar-links {
+    flex-direction: column;
+    gap: 0.5em;
+    width: 100%;
+    padding: 0;
+  }
+  .offer-section {
+    padding: 0.5em;
+  }
+  h2 {
+    font-size: 1.2em;
+  }
+  button {
+    width: 100%;
+    font-size: 1em;
+  }
+}
+
+/* Ajustes generales para la navbar y secciones */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5em 2em;
+}
+.navbar-links {
+  display: flex;
+  gap: 2em;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.offer-section {
+  max-width: 700px;
+  margin: 2em auto;
+  padding: 2em;
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+}
