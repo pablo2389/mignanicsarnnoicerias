@@ -1,104 +1,154 @@
-/* Ajuste global para centrar contenido */
-
-body {
- background-image: url('/images/image1.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-    position: relative;
-}
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0,0,0,0.5); /* Ajusta el 0.5 para más o menos oscuridad */
-  z-index: 0;
-  pointer-events: none;
-}
-.navbar-logo {
-  font-size: 3.5rem; /* Ajusta el tamaño */
-  text-align: center; /* Centra el texto */
-  font-weight: bold;
-  color: #fae737; /* Color cálido */
-  text-transform: uppercase;
+:root {
+  --navbar-height: 70px;
 }
 
-/* Navbar centrado */
+/* Offset para que el navbar sticky no tape las secciones */
+.offer-section,
+#sobre-nosotros,
+#contacto {
+  position: relative;
+  padding-top: calc(var(--navbar-height) + 10px);
+ 
+  background: rgba(0, 0, 0, 0.85); /* Más oscuro para mejor contraste */
+  border-radius: 12px;
+  color: #fffbe7; /* Más blanco para mejor contraste */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9); /* Sombra más marcada */
+  font-size: 1.15rem; /* Texto un poco más grande */
+  line-height: 1.6;   /* Más espacio entre líneas */
+    margin-bottom: 2.5em; 
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3); /* Sombra para separar del fondo */
+}
+
+/* Navbar */
 .navbar {
   display: flex;
-  justify-content: center; /* Centra los elementos */
+  justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  background: rgba(231, 12, 12, 0.6);
-  width: 90%; /* Asegura que ocupe el ancho necesario */
-  margin: auto; /* Centra el navbar */
+  padding: 1.2em 1.5em;
+  background: rgba(231, 12, 12, 0.98); /* Más opaco */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  color: #fffbe7;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-logo {
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fffbe7;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
+  letter-spacing: 2px;
 }
 
 .navbar-links {
   list-style: none;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 100px;
+  gap: 1.5em;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar-links a {
-  font-size: 1.8rem;
-  font-weight: bold;
   text-decoration: none;
-  color: rgb(237, 241, 20);
+  color: #fffbe7;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9);
+  transition: color 0.3s ease;
+  padding: 0.3em 0.7em;
+  border-radius: 6px;
 }
 
-/* Ofertas centradas */
-.offer-section {
-  background: rgba(255, 255, 255, 0.25); /* Más opaco = más blanco, menos opaco = más transparente */
-  backdrop-filter: blur(12px);            /* Aumenta el blur para más esmerilado */
-  -webkit-backdrop-filter: blur(12px);    /* Soporte para Safari */
-  border-radius: 16px;
-  box-shadow: 0 4px 32px 0 rgba(0,0,0,0.25);
-  padding: 2rem;
-  margin: 2rem 0;
-  color: #222;                            /* Asegura buen contraste */
+.navbar-links a:hover {
+  color: #ffeb3b;
+  background: rgba(255,255,255,0.08);
+  text-decoration: underline;
 }
 
-.offer-section h2 {
-  font-size: 3.5rem;
-  color: #dbcfcc;
+/* Formulario */
+form label {
   font-weight: bold;
-  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.3em;
+  color: #fffbe7;
 }
 
-.offer-section p {
-  font-size: 1.8rem;
-  color: #d6d0ce;
-  line-height: 2;
-}
-
-/* Footer centrado */
-footer {
-  background-color: #d94f2f;
-  color: white;
-  padding: 20px 0;
-  text-align: center;
-  font-size: 1.3rem;
+form input,
+form textarea {
   width: 100%;
+  padding: 0.7em;
+  margin-bottom: 1em;
+  border-radius: 6px;
+  border: none;
+  background: rgba(255, 255, 255, 0.25);
+  color: #222;
+  font-size: 1.05rem;
+  box-sizing: border-box;
+  outline: none;
 }
-li{
-  color:#f3eeec;
-  justify-content: center;
+
+form input:focus,
+form textarea:focus {
+  background: #fffbe7;
+  color: #222;
+  border: 1px solid #ff5722;
 }
-ul {
-  list-style: none; /* Quita las viñetas */
+
+form button {
+  background-color: #ff5722;
+  border: none;
+  padding: 0.9em 1.7em;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #fffbe7;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  transition: background-color 0.3s ease;
 }
-h1 {
-  color: #fff;
-  font-size: 2.5rem;
-  text-align: center;
-  margin-top: 2rem;
-  z-index: 2;
-  position: relative;
+body {
+  transition: background-image 1.5s ease-in-out;
+}
+
+form button:hover {
+  background-color: #ff7043;
+}
+
+/* Mejoras para listas */
+.offer-section ul {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding-left: 1.2em;
+}
+
+.offer-section li {
+  margin-bottom: 0.5em;
+  font-size: 1.08em;
+}
+
+/* Responsive para móviles */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1em 0.5em;
+  }
+  .navbar-logo {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+  }
+  .navbar-links {
+    flex-direction: column;
+    gap: 0.7em;
+    width: 100%;
+    padding: 0;
+  }
+  .offer-section,
+  #sobre-nosotros,
+  #contacto {
+    font-size: 1em;
+    padding: 1.2em 0.7em;
+  }
 }

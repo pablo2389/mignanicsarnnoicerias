@@ -3,10 +3,24 @@ import './app.css';
 
 const backgrounds = [
   "/images/image1.jpg",
-  "/images/image2.jpg"
-  , "/images/image3.jpg",
-  // Puedes agregar más imágenes aquí
+  "/images/image2.jpg",
+  "/images/image3.jpg",
 ];
+
+function Navbar() {
+  return (
+    <nav className="navbar">
+      <div className="navbar-logo">MIGNANI</div>
+      <ul className="navbar-links">
+        <li><a href="#lunes-jueves">Lunes a Jueves</a></li>
+        <li><a href="#viernes-domingo">Viernes a Domingo</a></li>
+        <li><a href="#asados">Asados</a></li>
+        <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  );
+}
 
 function ListaOfertas({ titulo, listaOfertas, descripcion, id }) {
   const [mostrar, setMostrar] = useState(false);
@@ -30,13 +44,54 @@ function ListaOfertas({ titulo, listaOfertas, descripcion, id }) {
   );
 }
 
+function SobreNosotros() {
+  return (
+    <section className="offer-section" id="sobre-nosotros">
+      <h2>Sobre Nosotros</h2>
+      <p>
+        Somos la Carnicería Mignani, con más de 20 años ofreciendo los mejores cortes de carne
+        de la región, comprometidos con la calidad y el sabor tradicional.
+      </p>
+    </section>
+  );
+}
+
+function Contacto() {
+  return (
+    <section className="offer-section" id="contacto">
+      <h2>Contacto</h2>
+      <p>Teléfono: <strong>0261 123-4567</strong></p>
+      <p>Email: <strong>contacto@mignani.com.ar</strong></p>
+      <p>Dirección: <strong>Av. Principal 123, Guaymallén, Mendoza</strong></p>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          alert('Gracias por contactarnos. ¡Pronto te responderemos!');
+          e.target.reset();
+        }}
+      >
+        <label htmlFor="nombre">Nombre:</label><br />
+        <input type="text" id="nombre" name="nombre" required /><br /><br />
+
+        <label htmlFor="email">Email:</label><br />
+        <input type="email" id="email" name="email" required /><br /><br />
+
+        <label htmlFor="mensaje">Mensaje:</label><br />
+        <textarea id="mensaje" name="mensaje" rows="4" required></textarea><br /><br />
+
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  );
+}
+
 function App() {
   const [bgIndex, setBgIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setBgIndex((prev) => (prev + 1) % backgrounds.length);
-    }, 4000); // Cambia cada 4 segundos
+    }, 15000);
     return () => clearInterval(interval);
   }, []);
 
@@ -70,7 +125,8 @@ function App() {
   ];
 
   return (
-    <div>
+    <>
+      <Navbar />
       <h1>BIENVENIDOS A LA CARNICERIA MIGNANI</h1>
       <ListaOfertas
         titulo="Ofertas de Lunes a Jueves"
@@ -90,7 +146,9 @@ function App() {
         listaOfertas={ofertasAsados}
         id="asados"
       />
-    </div>
+      <SobreNosotros />
+      <Contacto />
+    </>
   );
 }
 
